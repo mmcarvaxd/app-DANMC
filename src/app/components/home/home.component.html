@@ -1,0 +1,55 @@
+<ion-menu side="start" menuId="first" contentId="content1">
+  <ion-header translucent>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button (click)="testClick()">
+        <ion-avatar slot="start">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+        </ion-avatar>
+        <ion-label>
+          Avatar Start, Button Item
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header translucent>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{ title }}</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content1">
+  <ion-tabs #homeTabs (ionTabsDidChange)="tabChanged(homeTabs)">
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="news">
+        <ion-icon name="paper"></ion-icon>
+        <ion-label>Noticias</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="card">
+        <ion-icon name="card"></ion-icon>
+        <ion-label>Cartão</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="calendar">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Eventos</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

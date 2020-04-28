@@ -1,28 +1,20 @@
-<ion-header translucent>
-  <ion-toolbar color="primary">
-    <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content id="content1">
-  <ion-tabs #homeTabs (ionTabsDidChange)="tabChanged(homeTabs)">
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="news">
-        <ion-icon name="paper"></ion-icon>
-        <ion-label>Noticias</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="card">
-        <ion-icon name="card"></ion-icon>
-        <ion-label>Cartão</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="calendar">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Eventos</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="menu">
-        <ion-icon name="menu"></ion-icon>
-        <ion-label>Menu</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</ion-content>
+<ion-tabs #homeTabs (ionTabsDidChange)="tabChanged(homeTabs)">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="news">
+      <ion-icon name="paper"></ion-icon>
+      <ion-label>Avisos</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="card">
+      <ion-icon name="card"></ion-icon>
+      <ion-label>Cartão</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="calendar">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Eventos</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="menu">
+      <ion-icon name="menu"></ion-icon>
+      <ion-label>Menu</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

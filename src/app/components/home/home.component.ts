@@ -15,12 +15,9 @@ export class HomeComponent{
     card: "Cartão",
     calendar: "Eventos"
   }
+  
   constructor(private menu: MenuController) { 
 
-  }
-
-  openMenu() {
-    this.menu.toggle('first');
   }
 
   openPortal() {

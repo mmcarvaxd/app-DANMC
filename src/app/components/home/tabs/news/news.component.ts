@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-news',
@@ -6,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
-
+  avisos = []
   constructor() { }
 
   ngOnInit() {}
-
 }

@@ -1,2 +1,28 @@
-<!-- <item-dropdown></item-dropdown> -->
-<p>Noticias</p>
+<ion-header translucent="true">
+    <ion-toolbar>
+        <ion-title>Avisos</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-header translucent="true" collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Avisos</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-item lines="full">
+        <ion-icon slot="start" name="moon"></ion-icon>
+        <ion-label>
+            Toggle Dark Theme
+        </ion-label>
+        <ion-toggle id="themeToggle" slot="end" (ionChange)="aaaa()"></ion-toggle>
+    </ion-item>
+    <ion-list>
+        <ion-item *ngFor="let aviso of avisos" button (click)="clickAviso(aviso)">
+            <ion-label>
+                <h2>{{aviso.title}}</h2>
+                <h3>{{aviso.corpo_aviso}}</h3>
+                <p>{{aviso.data}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

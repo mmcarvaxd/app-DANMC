@@ -10,7 +10,7 @@
         </ion-toolbar>
     </ion-header>
     <ion-list>
-        <ion-item *ngFor="let aviso of avisos" button (click)="clickAviso(aviso)">
+        <ion-item *ngFor="let aviso of avisos" button (click)="clickAviso(aviso)" detail>
             <ion-label>
                 <h2>{{aviso.title}}</h2>
                 <h3>{{aviso.corpo_aviso}}</h3>

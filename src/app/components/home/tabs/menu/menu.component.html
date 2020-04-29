@@ -1,6 +1,6 @@
 <ion-header translucent="true">
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-title>Menu</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -9,4 +9,32 @@
       <ion-title size="large">Menu</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div style="height: 10px;"></div>
+  <ion-item detail button (click)="onClick()">
+    <ion-avatar slot="start">
+      <img src="/assets/images/bear.png" />
+    </ion-avatar>
+    <ion-label>Matheus Martins de Carvalho</ion-label>
+  </ion-item>
+  <ion-card *ngFor="let option of options" button (click)="option.action()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="{{ option.icon }}" slot="start" color="primary"></ion-icon>
+        <ion-label>{{ option.title }}</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-item-divider>
+    <ion-label>
+      Outras Opções
+    </ion-label>
+  </ion-item-divider>
+  <ion-item lines="full" button (click)="onClick()">
+    <ion-icon name="settings" slot="start" color="medium"></ion-icon>
+    <ion-label>Configurações</ion-label>
+  </ion-item>
+  <ion-item lines="full" button (click)="onClick()">
+    <ion-icon name="log-out" slot="start" color="danger"></ion-icon>
+    <ion-label>Sair</ion-label>
+  </ion-item>
 </ion-content>

@@ -13,9 +13,10 @@ import { NewsComponent } from './components/home/tabs/news/news.component'
 import { CardComponent } from './components/home/tabs/card/card.component'
 import { AppRoutingModule } from './app-routing.module';
 import { ItemDropdownComponent } from './components/widgets/item-dropdown/item-dropdown.component';
+import { MenuComponent } from './components/home/tabs/menu/menu.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   exports: [ItemDropdownComponent],

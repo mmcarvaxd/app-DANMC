@@ -5,6 +5,7 @@ import { LoginComponent} from './components/login/login.component'
 import { HomeComponent} from './components/home/home.component'
 import { NewsComponent } from './components/home/tabs/news/news.component'
 import { CardComponent } from './components/home/tabs/card/card.component';
+import { MenuComponent } from './components/home/tabs/menu/menu.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: 'card',
         component: CardComponent
+      },
+      {
+        path: 'menu',
+        component: MenuComponent
       },
     ]
   },

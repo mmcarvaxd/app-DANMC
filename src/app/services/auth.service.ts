@@ -17,4 +17,8 @@ export class AuthService {
       return null
     }
   }
+
+  deleteUser(): void {
+    localStorage.clear()
+  }
 }

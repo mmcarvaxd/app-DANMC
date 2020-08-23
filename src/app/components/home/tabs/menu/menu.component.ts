@@ -38,4 +38,13 @@ export class MenuComponent {
   funcDocument() {
     return
   }
+
+  funcSair() {
+    this.authService.deleteUser()
+    this.router.navigate(['/login'], { replaceUrl: true })
+  }
+
+  funcUsuario() {
+    return
+  }
 }

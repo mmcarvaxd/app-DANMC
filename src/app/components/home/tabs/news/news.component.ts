@@ -34,5 +34,10 @@ export class NewsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  createAviso() {
+    
+  }
 }

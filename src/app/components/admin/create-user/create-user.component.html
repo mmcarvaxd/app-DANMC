@@ -1,3 +1,51 @@
-<p>
-  create-user works!
-</p>
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Criar Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-header translucent="true" collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Criar Usuário</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div style="height: 10px;"></div>
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="usuario.nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Login</ion-label>
+    <ion-input [(ngModel)]="usuario.login"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Turma</ion-label>
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="usuario.TurmaId">
+      <ion-select-option *ngFor="let turma of turmas" value="{{turma.id}}">{{turma.descricao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Perfil</ion-label>
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="usuario.PerfilId">
+      <ion-select-option *ngFor="let perfil of perfis" value="{{perfil.id}}">{{perfil.descricao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nivel de Acesso</ion-label>
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="usuario.NivelAcessoId">
+      <ion-select-option *ngFor="let nivelacesso of nivelAcessos" value="{{nivelacesso.id}}">{{nivelacesso.descricao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="block" style="margin-top: 15px;" (click)="createUser()">
+    <div class="padding-20">
+        <p class="bold">Cadastrar</p>
+    </div>
+</ion-button>
+</ion-content>

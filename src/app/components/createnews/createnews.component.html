@@ -1,0 +1,34 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Aviso</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-header translucent="true" collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Aviso</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input [(ngModel)]="aviso.titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tema</ion-label>
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="aviso.TemaId">
+      <ion-select-option *ngFor="let tema of temas" value="{{tema.id}}">{{tema.descricao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Conteudo</ion-label>
+    <ion-textarea autoGrow="true" maxlength="500" [(ngModel)]="aviso.conteudo"></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" style="margin-top: 15px;" (click)="criarAviso()">
+    <div class="padding-20">
+      <p class="bold">Cadastrar</p>
+    </div>
+  </ion-button>
+</ion-content>

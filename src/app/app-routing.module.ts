@@ -1,5 +1,3 @@
-import { CreateUserComponent } from './components/admin/create-user/create-user.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 //Components
@@ -8,6 +6,9 @@ import { HomeComponent} from './components/home/home.component'
 import { NewsComponent } from './components/home/tabs/news/news.component'
 import { CardComponent } from './components/home/tabs/card/card.component';
 import { MenuComponent } from './components/home/tabs/menu/menu.component';
+import { CreatenewsComponent } from './components/createnews/createnews.component';
+import { CreateUserComponent } from './components/admin/create-user/create-user.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'createuser',
     component: CreateUserComponent
+  },
+  {
+    path: 'createnews',
+    component: CreatenewsComponent
   },
   {
     path: 'home',

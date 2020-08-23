@@ -18,9 +18,10 @@ import { ItemDropdownComponent } from './components/widgets/item-dropdown/item-d
 import { MenuComponent } from './components/home/tabs/menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { CreatenewsComponent } from './components/createnews/createnews.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent, AdminComponent, CreateUserComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent, AdminComponent, CreateUserComponent, CreatenewsComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule ],
   exports: [ItemDropdownComponent],

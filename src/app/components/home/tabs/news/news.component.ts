@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
@@ -32,12 +33,12 @@ export class NewsComponent implements OnInit {
     data: '10/08/2020'
   }]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   createAviso() {
-    
+    this.router.navigate(['/createnews'])
   }
 }

@@ -1,3 +1,4 @@
+import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'createuser',
+    component: CreateUserComponent
   },
   {
     path: 'home',

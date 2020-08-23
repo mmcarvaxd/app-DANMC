@@ -24,7 +24,6 @@ export class MenuComponent {
   }
 
   funcAdm() {
-    console.log(this.router)
     return this.router.navigate(['/admin'])
   }
 

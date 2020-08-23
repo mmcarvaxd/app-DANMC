@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
-
+  createUser() {
+    this.router.navigate(['createuser'])
+  }
 }

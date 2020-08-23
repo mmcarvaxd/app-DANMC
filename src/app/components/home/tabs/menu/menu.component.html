@@ -16,11 +16,59 @@
     </ion-avatar>
     <ion-label>Matheus Martins de Carvalho</ion-label>
   </ion-item>
-  <ion-card *ngFor="let option of options" button (click)="option.action()">
+  <ion-card button (click)="openPortal()">
     <ion-card-header>
       <ion-item detail lines="none">
-        <ion-icon name="{{ option.icon }}" slot="start" color="primary"></ion-icon>
-        <ion-label>{{ option.title }}</ion-label>
+        <ion-icon name="link" slot="start" color="primary"></ion-icon>
+        <ion-label>Portal</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcAdm()" *ngIf="usuario.NivelAcessoId === 1">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="key" slot="start" color="primary"></ion-icon>
+        <ion-label>Administração</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcDocument()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="document" slot="start" color="primary"></ion-icon>
+        <ion-label>Documentos</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcBeneficios()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="list-box" slot="start" color="primary"></ion-icon>
+        <ion-label>Benefícios</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcBeneficios()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="git-merge" slot="start" color="primary"></ion-icon>
+        <ion-label>Colig</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcGradeHor()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="grid" slot="start" color="primary"></ion-icon>
+        <ion-label>Grade Horária</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcGradeHor()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="chatboxes" slot="start" color="primary"></ion-icon>
+        <ion-label>Fale Conosco</ion-label>
       </ion-item>
     </ion-card-header>
   </ion-card>

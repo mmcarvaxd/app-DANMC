@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonTabs, MenuController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { IonTabs, MenuController } from '@ionic/angular';
   styleUrls: ['./home.component.scss'],
 })
 
-export class HomeComponent{
+export class HomeComponent implements OnInit{
   title: string = '';
   tabs = {
     news: "Noticias",
@@ -16,8 +18,13 @@ export class HomeComponent{
     calendar: "Eventos"
   }
   
-  constructor(private menu: MenuController) { 
+  constructor(private menu: MenuController, private authService: AuthService, private router: Router) { 
 
+  }
+  ngOnInit(): void {
+    if(!this.authService.getUser()) {
+      this.router.navigate(['/login'])
+    }
   }
 
   openPortal() {

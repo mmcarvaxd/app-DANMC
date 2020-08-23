@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 //components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsComponent } from './components/home/tabs/news/news.component'
 import { CardComponent } from './components/home/tabs/card/card.component'
@@ -18,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent, AdminComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule ],
   exports: [ItemDropdownComponent],

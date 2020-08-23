@@ -1,5 +1,7 @@
+import { AuthService } from './../../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuOptions } from 'src/app/classes/menu-options';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,27 +10,22 @@ import { MenuOptions } from 'src/app/classes/menu-options';
 })
 export class MenuComponent {
   options: [MenuOptions]
-  constructor() {
-    this.options = this.createOptions()
-  }
+  usuario: Usuario = this.authService.getUser()
+  
+  constructor(private authService: AuthService, private router: Router) {}
 
   createOption(icon: string, title: string, action: Function) {
     return new MenuOptions(icon, title, action)
   }
 
-  createOptions() {
-    let options: [MenuOptions] = [this.createOption("link", "Portal", this.openPortal)]
-    options.push(this.createOption("document", "Documentos", this.funcDocument))
-    options.push(this.createOption("list-box", "Benefícios", this.funcBeneficios))
-    options.push(this.createOption("git-merge", "Colig", this.funcBeneficios))
-    options.push(this.createOption("grid", "Grade Horária", this.funcGradeHor))
-    options.push(this.createOption("chatboxes", "Fale Conosco", this.funcGradeHor))
-    return options
-  }
-
   //Funções dos cards de opções
   openPortal() {
     window.open('https://www.facebook.com', '_system')
+  }
+
+  funcAdm() {
+    console.log(this.router)
+    return this.router.navigate(['/admin'])
   }
 
   funcBeneficios() { 

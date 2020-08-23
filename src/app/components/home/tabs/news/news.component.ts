@@ -7,7 +7,31 @@ import { TestBed } from '@angular/core/testing';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
-  avisos = []
+  avisos = [ {
+    title: 'aaa',
+    corpo_aviso: 'aaaa',
+    data: '10/08/2020'
+  },{
+    title: 'aaa',
+    corpo_aviso: 'aaaa',
+    data: '10/08/2020'
+  },
+  {
+    title: 'aaa',
+    corpo_aviso: 'aaaa',
+    data: '10/08/2020'
+  },
+  {
+    title: 'aaa',
+    corpo_aviso: 'aaaa',
+    data: '10/08/2020'
+  },
+  {
+    title: 'aaa',
+    corpo_aviso: 'aaaa',
+    data: '10/08/2020'
+  }]
+
   constructor() { }
 
   ngOnInit() {}

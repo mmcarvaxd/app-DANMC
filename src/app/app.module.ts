@@ -14,11 +14,13 @@ import { CardComponent } from './components/home/tabs/card/card.component'
 import { AppRoutingModule } from './app-routing.module';
 import { ItemDropdownComponent } from './components/widgets/item-dropdown/item-dropdown.component';
 import { MenuComponent } from './components/home/tabs/menu/menu.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule ],
   exports: [ItemDropdownComponent],
   providers: [
     StatusBar,

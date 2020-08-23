@@ -15,18 +15,18 @@
               <div class="margin-top-20">
                   <ion-item lines="none" class="border-all padding-5 margin-side-20 ion-no-padding">
                       <ion-icon name="person" class="gray-color margin-left-10"></ion-icon>
-                      <ion-input type="email" class="margin-left-20 gray-color"></ion-input>
+                      <ion-input type="email" class="margin-left-20 gray-color" [(ngModel)]="login"></ion-input>
                   </ion-item>
               </div>
               <div class="margin-top-20">
                   <ion-item lines="none" class="border-all padding-5 margin-side-20 ion-no-padding">
                       <ion-icon name="key" class="gray-color margin-left-10"></ion-icon>
-                      <ion-input type="password" class="margin-left-20 gray-color"></ion-input>
+                      <ion-input type="password" class="margin-left-20 gray-color" [(ngModel)]="senha"></ion-input>
                   </ion-item>
               </div>
               <!--Button Entrar-->
               <div class="margin-side-20 margin-top-20 height-50">
-                  <ion-button expand="block" class="round-button height-50 button-color-green">
+                  <ion-button expand="block" class="round-button height-50 button-color-green" (click)="logar()">
                       <div class="padding-20">
                           <p class="bold">Entrar</p>
                       </div>

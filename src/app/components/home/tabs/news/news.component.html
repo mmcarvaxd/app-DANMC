@@ -12,9 +12,10 @@
     <ion-list>
         <ion-item *ngFor="let aviso of avisos" button (click)="clickAviso(aviso)" detail>
             <ion-label>
-                <h2>{{aviso.title}}</h2>
-                <h3>{{aviso.corpo_aviso}}</h3>
-                <p>{{aviso.data}}</p>
+                <h2>{{aviso.titulo}}</h2>
+                <h3>{{aviso.Tema.descricao}}</h3>
+                <h3>{{aviso.conteudo}}</h3>
+                <p>{{aviso.DataPostagem | date: 'dd/MM/yyyy'}}</p>
             </ion-label>
         </ion-item>
 

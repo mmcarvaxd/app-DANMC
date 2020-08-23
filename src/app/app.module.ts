@@ -1,3 +1,4 @@
+import { AvisoComponent } from './components/aviso/aviso.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -21,9 +22,20 @@ import { HttpClientModule } from '@angular/common/http'
 import { CreatenewsComponent } from './components/createnews/createnews.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, NewsComponent, CardComponent, ItemDropdownComponent, MenuComponent, AdminComponent, CreateUserComponent, CreatenewsComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    NewsComponent,
+    CardComponent,
+    ItemDropdownComponent,
+    MenuComponent,
+    AdminComponent,
+    CreateUserComponent,
+    CreatenewsComponent,
+    AvisoComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   exports: [ItemDropdownComponent],
   providers: [
     StatusBar,
@@ -33,4 +45,4 @@ import { CreatenewsComponent } from './components/createnews/createnews.componen
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

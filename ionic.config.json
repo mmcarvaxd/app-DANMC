@@ -1,5 +1,7 @@
 {
   "name": "app-DANMC",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

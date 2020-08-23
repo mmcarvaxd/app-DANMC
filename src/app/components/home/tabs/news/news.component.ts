@@ -1,3 +1,4 @@
+import { AvisoService } from './../../../../services/aviso.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
@@ -8,37 +9,21 @@ import { TestBed } from '@angular/core/testing';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
-  avisos = [ {
-    title: 'aaa',
-    corpo_aviso: 'aaaa',
-    data: '10/08/2020'
-  },{
-    title: 'aaa',
-    corpo_aviso: 'aaaa',
-    data: '10/08/2020'
-  },
-  {
-    title: 'aaa',
-    corpo_aviso: 'aaaa',
-    data: '10/08/2020'
-  },
-  {
-    title: 'aaa',
-    corpo_aviso: 'aaaa',
-    data: '10/08/2020'
-  },
-  {
-    title: 'aaa',
-    corpo_aviso: 'aaaa',
-    data: '10/08/2020'
-  }]
+  avisos: [Aviso]
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private avisoService: AvisoService) { }
 
   ngOnInit() {
+    this.avisoService.busca().subscribe(resp => {
+      this.avisos = resp
+    })
   }
 
   createAviso() {
     this.router.navigate(['/createnews'])
+  }
+
+  clickAviso(aviso: Aviso) {
+    this.router.navigate(['/aviso', aviso.id.toString()])
   }
 }

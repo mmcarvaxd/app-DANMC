@@ -20,7 +20,7 @@ export class MenuComponent {
 
   //Funções dos cards de opções
   openPortal() {
-    window.open('https://www.facebook.com', '_system')
+    window.open('http://portaldoaluno.fmabc.br:7072/web/app/edu/PortalEducacional/login/?redirect=main', '_system')
   }
 
   funcAdm() {

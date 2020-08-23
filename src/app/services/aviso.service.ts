@@ -15,6 +15,11 @@ export class AvisoService {
     return this.http.get<[Aviso]>(url)
   }
 
+  buscaId(id: String): Observable<Aviso> {
+    let url = this.base_url + '/avisos/' + id
+    return this.http.get<Aviso>(url)
+  }
+
   create(aviso: Aviso): Observable<any> {
     let url = this.base_url + '/avisos'
     return this.http.post<any>(url, {aviso})

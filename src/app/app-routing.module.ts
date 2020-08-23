@@ -1,3 +1,4 @@
+import { AvisoComponent } from './components/aviso/aviso.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 //Components
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'createnews',
     component: CreatenewsComponent
+  },
+  {
+    path: 'aviso/:id',
+    component: AvisoComponent
   },
   {
     path: 'home',

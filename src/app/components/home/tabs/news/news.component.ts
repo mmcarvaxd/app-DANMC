@@ -1,7 +1,6 @@
 import { AvisoService } from './../../../../services/aviso.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-news',
@@ -11,13 +10,27 @@ import { TestBed } from '@angular/core/testing';
 export class NewsComponent implements OnInit {
   avisos: [Aviso]
 
-  constructor(private router: Router, private avisoService: AvisoService) { }
+  constructor(private router: Router, private avisoService: AvisoService) {}
 
   ngOnInit() {
+    this.getAvisos()
+  }
+
+  getAvisos(event?) {
     this.avisoService.busca().subscribe(resp => {
       this.avisos = resp
+      if(event) {
+        setTimeout(() => {
+          event.target.complete();
+        }, 2000);
+      }
+    }, err => {
+      setTimeout(() => {
+        event.target.complete();
+      }, 2000);
     })
   }
+  
 
   createAviso() {
     this.router.navigate(['/createnews'])

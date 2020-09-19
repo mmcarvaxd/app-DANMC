@@ -26,9 +26,10 @@
               </div>
               <!--Button Entrar-->
               <div class="margin-side-20 margin-top-20 height-50">
-                  <ion-button expand="block" class="round-button height-50 button-color-green" (click)="logar()">
+                  <ion-button expand="block" class="round-button height-50 button-color-green" (click)="logar()" [disabled]="isLogging">
                       <div class="padding-20">
-                          <p class="bold">Entrar</p>
+                          <p class="bold" *ngIf="!isLogging">Entrar</p>
+                          <ion-spinner *ngIf="isLogging"></ion-spinner>
                       </div>
                   </ion-button>
               </div>

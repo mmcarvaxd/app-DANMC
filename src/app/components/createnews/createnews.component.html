@@ -18,7 +18,7 @@
   </ion-item>
   <ion-item>
     <ion-label>Tema</ion-label>
-    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="aviso.TemaId">
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="aviso.temaId">
       <ion-select-option *ngFor="let tema of temas" value="{{tema.id}}">{{tema.descricao}}</ion-select-option>
     </ion-select>
   </ion-item>

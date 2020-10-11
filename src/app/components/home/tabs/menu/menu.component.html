@@ -24,11 +24,19 @@
       </ion-item>
     </ion-card-header>
   </ion-card>
-  <ion-card button (click)="funcAdm()" *ngIf="usuario.NivelAcessoId === 1">
+  <ion-card button (click)="funcAdm()" *ngIf="isAdmin">
     <ion-card-header>
       <ion-item detail lines="none">
         <ion-icon name="key" slot="start" color="primary"></ion-icon>
         <ion-label>Administração</ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card button (click)="funcBeneficios()">
+    <ion-card-header>
+      <ion-item detail lines="none">
+        <ion-icon name="git-merge" slot="start" color="primary"></ion-icon>
+        <ion-label>Colig</ion-label>
       </ion-item>
     </ion-card-header>
   </ion-card>
@@ -45,14 +53,6 @@
       <ion-item detail lines="none">
         <ion-icon name="list-box" slot="start" color="primary"></ion-icon>
         <ion-label>Benefícios</ion-label>
-      </ion-item>
-    </ion-card-header>
-  </ion-card>
-  <ion-card button (click)="funcBeneficios()">
-    <ion-card-header>
-      <ion-item detail lines="none">
-        <ion-icon name="git-merge" slot="start" color="primary"></ion-icon>
-        <ion-label>Colig</ion-label>
       </ion-item>
     </ion-card-header>
   </ion-card>

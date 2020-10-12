@@ -67,6 +67,6 @@ export class MenuComponent {
   }
 
   funcUsuario() {
-    return
+    return this.router.navigate([`/user/${this.usuario.id}`])
   }
 }

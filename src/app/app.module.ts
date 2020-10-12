@@ -20,6 +20,7 @@ import { MenuComponent } from './components/home/tabs/menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { CreatenewsComponent } from './components/createnews/createnews.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreatenewsComponent } from './components/createnews/createnews.componen
     AdminComponent,
     CreateUserComponent,
     CreatenewsComponent,
-    AvisoComponent],
+    AvisoComponent,
+    UserComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   exports: [ItemDropdownComponent],

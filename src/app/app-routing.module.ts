@@ -10,6 +10,7 @@ import { MenuComponent } from './components/home/tabs/menu/menu.component';
 import { CreatenewsComponent } from './components/createnews/createnews.component';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'createnews',
     component: CreatenewsComponent
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent
   },
   {
     path: 'aviso/:id',

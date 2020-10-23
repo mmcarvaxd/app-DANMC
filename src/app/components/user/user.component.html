@@ -17,11 +17,11 @@
     <ion-label position="floating">Nome</ion-label>
     <ion-input [(ngModel)]="usuario.nome"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item [hidden]="true">
     <ion-label position="floating">Login</ion-label>
     <ion-input [(ngModel)]="usuario.login"></ion-input>
   </ion-item>
-  <ion-button expand="block" style="margin-top: 15px;" color="danger" (click)="createUser()">
+  <ion-button expand="block" style="margin-top: 15px;" color="danger" (click)="updatePassword()">
     <div class="padding-20">
       <p class="bold">Alterar Senha</p>
     </div>

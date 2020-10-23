@@ -12,11 +12,16 @@ export class UsuarioService {
 
   create(usuario: Usuario): Observable<any> {
     let url = this.base_url + '/usuario'
-    return this.http.post<any>(url, {usuario})
+    return this.http.post<any>(url, { usuario })
   }
 
   saveUser(usuario: Usuario): Observable<any> {
     let url = this.base_url + `/usuario/${usuario.id}`
-    return this.http.put(url, {usuario})
+    return this.http.put(url, { usuario })
   }
+
+  savePassword(usuario: Usuario, senhaAntiga: String): Observable<any> {
+    let url = this.base_url + `/usuario/senha/${usuario.id}`
+    return this.http.put(url, { usuario, senhaAntiga })
+}
 }

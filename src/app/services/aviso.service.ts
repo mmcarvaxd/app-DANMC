@@ -24,4 +24,9 @@ export class AvisoService {
     let url = this.base_url + '/avisos'
     return this.http.post<any>(url, {aviso})
   }
+
+  delete(id: String): Observable<any> {
+    let url = this.base_url + '/avisos/' + id
+    return this.http.delete<any>(url)
+  }
 }

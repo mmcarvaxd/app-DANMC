@@ -26,5 +26,9 @@
     <p style="word-break: break-word;">{{aviso.conteudo}}</p>
   </ion-item>
   
-
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="deleteAviso()" color="danger">
+        <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
 </ion-content>

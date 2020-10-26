@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // api_url: 'https://api-danmc.herokuapp.com'
-  api_url: 'http://localhost:9002'
+  api_url: 'https://api-danmc.herokuapp.com'
+  // api_url: 'http://localhost:9002'
 };
 
 /*

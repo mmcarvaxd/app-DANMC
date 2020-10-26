@@ -1,14 +1,15 @@
 import { AvisoService } from './../../services/aviso.service';
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-aviso',
   templateUrl: './aviso.component.html',
   styleUrls: ['./aviso.component.scss'],
 })
-export class AvisoComponent implements AfterViewInit {
+export class AvisoComponent implements OnInit {
   aviso: Aviso = {
     temaId: 1,
     conteudo: "",
@@ -17,14 +18,18 @@ export class AvisoComponent implements AfterViewInit {
       descricao: ""
     }
   }
+  usuario: Usuario
+  isAdmin: boolean = false
 
-  constructor(private activeRoute: ActivatedRoute, private avisoService: AvisoService, private toastController: ToastController, private router: Router) { }
+  constructor(private activeRoute: ActivatedRoute, private avisoService: AvisoService, private toastController: ToastController, private router: Router,  private authService: AuthService) { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     let id = this.activeRoute.snapshot.paramMap.get('id')
     this.avisoService.buscaId(id).subscribe(resp => {
       this.aviso = resp
     })
+    this.usuario = this.authService.getUser()
+    this.isAdmin = this.usuario.NivelAcessoId === 1;
   }
 
   deleteAviso() {

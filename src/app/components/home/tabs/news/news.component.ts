@@ -1,6 +1,7 @@
 import { AvisoService } from './../../../../services/aviso.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-news',
@@ -9,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
   avisos: [Aviso]
+  usuario: Usuario
+  isAdmin: boolean = false
 
-  constructor(private router: Router, private avisoService: AvisoService) {}
+  constructor(private router: Router, private avisoService: AvisoService, private authService: AuthService) {}
 
   ngOnInit() {
     this.getAvisos()
+    this.usuario = this.authService.getUser()
+    this.isAdmin = this.usuario.NivelAcessoId === 1;
   }
 
   getAvisos(event?) {

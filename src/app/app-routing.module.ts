@@ -11,6 +11,9 @@ import { CreatenewsComponent } from './components/createnews/createnews.componen
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
+import { CreatedocsComponent } from './components/createdocs/createdocs.component';
+import { DocsComponent } from './components/docs/docs.component';
+import { DocComponent } from './components/doc/doc.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -30,6 +33,18 @@ const routes: Routes = [
   {
     path: 'createnews',
     component: CreatenewsComponent
+  },
+  {
+    path: 'createdocs',
+    component: CreatedocsComponent
+  },
+  {
+    path: 'docs',
+    component: DocsComponent
+  },
+  {
+    path: 'docs/:id',
+    component: DocComponent
   },
   {
     path: 'user/:id',

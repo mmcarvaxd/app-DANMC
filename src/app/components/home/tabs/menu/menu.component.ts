@@ -59,7 +59,7 @@ export class MenuComponent {
   }
 
   funcDocument() {
-    return
+    return this.router.navigate([`/docs`])
   }
 
   async funcSair() {

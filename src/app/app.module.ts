@@ -21,6 +21,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { CreatenewsComponent } from './components/createnews/createnews.component';
 import { UserComponent } from './components/user/user.component';
+import { CreatedocsComponent } from './components/createdocs/createdocs.component';
+import { DocsComponent } from './components/docs/docs.component';
+import { DocComponent } from './components/doc/doc.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { UserComponent } from './components/user/user.component';
     CreateUserComponent,
     CreatenewsComponent,
     AvisoComponent,
-    UserComponent],
+    UserComponent,
+    CreatedocsComponent,
+    DocsComponent,
+    DocComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   exports: [ItemDropdownComponent],

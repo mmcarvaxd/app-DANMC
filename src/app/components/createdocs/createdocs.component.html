@@ -1,0 +1,38 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Documentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-header translucent="true" collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Documentos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input [(ngModel)]="documentos.titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tema</ion-label>
+    <ion-select value="1" okText="Ok" cancelText="Cancelar" [(ngModel)]="documentos.AssuntosId">
+      <ion-select-option *ngFor="let assunto of assuntos" value="{{assunto.id}}">{{assunto.descricao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Conteudo</ion-label>
+    <ion-textarea autoGrow="true" maxlength="500" [(ngModel)]="documentos.conteudo"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Arquivo</ion-label>
+    <ion-input type="file" (change)="changeListener($event)"></ion-input>
+  </ion-item>
+  <ion-button expand="block" style="margin-top: 15px;" (click)="criarDocs()">
+    <div class="padding-20">
+      <p class="bold">Cadastrar</p>
+    </div>
+  </ion-button>
+</ion-content>

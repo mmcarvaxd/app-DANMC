@@ -25,9 +25,10 @@
   <ion-item lines="none">
     <p style="word-break: break-word;">{{doc.Conteudo}}</p>
   </ion-item>
-  <ion-button expand="block" style="margin-top: 15px;" (click)="downloadDoc()">
+  <ion-button expand="block" style="margin-top: 15px;" (click)="downloadDoc()" [disabled]="isDown">
     <div class="padding-20">
-      <p class="bold">Baixar Documento</p>
+      <p class="bold" *ngIf="!isDown">Baixar Documento</p>
+      <ion-spinner *ngIf="isDown"></ion-spinner>
     </div>
   </ion-button>
 

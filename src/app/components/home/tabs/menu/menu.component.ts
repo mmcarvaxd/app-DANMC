@@ -66,6 +66,10 @@ export class MenuComponent {
     await this.confirmSair();
   }
 
+  funcFeedBack() {
+    return window.open('https://forms.gle/RUtXnDmQhEi5D6Ro7', '_system')
+  }
+
   funcUsuario() {
     return this.router.navigate([`/user/${this.usuario.id}`])
   }

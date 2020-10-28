@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AssuntosService } from 'src/app/services/assuntos.service';
 import { DocumentosService } from 'src/app/services/documentos.service';
 import { Location } from '@angular/common';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-createdocs',
@@ -19,7 +20,7 @@ export class CreatedocsComponent implements OnInit {
 
   assuntos: Assunto[]
   
-  constructor(private assuntosService: AssuntosService, private documentosService: DocumentosService, private location: Location) { }
+  constructor(private assuntosService: AssuntosService, private documentosService: DocumentosService, private location: Location, private toastController: ToastController) { }
 
   ngOnInit() {
     this.assuntosService.busca().subscribe(resp => {
@@ -32,7 +33,14 @@ export class CreatedocsComponent implements OnInit {
   }
 
   criarDocs() {
-    this.documentosService.create(this.documentos, this.arquivo).subscribe(resp => {})
-    this.location.back();
+    this.documentosService.create(this.documentos, this.arquivo).subscribe(async resp => {
+      let alert = await this.toastController.create({
+        message: 'Documento criado com sucesso!',
+        duration: 2000
+      })
+
+      alert.present()
+      this.location.back();
+    })
   }
 }

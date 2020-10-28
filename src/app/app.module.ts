@@ -24,7 +24,9 @@ import { UserComponent } from './components/user/user.component';
 import { CreatedocsComponent } from './components/createdocs/createdocs.component';
 import { DocsComponent } from './components/docs/docs.component';
 import { DocComponent } from './components/doc/doc.component';
-
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { DocComponent } from './components/doc/doc.component';
     StatusBar,
     SplashScreen,
     IonTabs,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FileTransfer,FileOpener,
+    File
   ],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,7 @@ class Documentos {
     conteudo: string
     AssuntosId?: number
     Assunto?: Assunto
+    pathArquivo?: string
     DataPostagem?: Date
 
     constructor() {}

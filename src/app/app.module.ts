@@ -27,6 +27,7 @@ import { DocComponent } from './components/doc/doc.component';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FiltroModalComponent } from './components/home/tabs/news/filtro-modal/filtro-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     UserComponent,
     CreatedocsComponent,
     DocsComponent,
-    DocComponent],
+    DocComponent, 
+    FiltroModalComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   exports: [ItemDropdownComponent],

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { AuthService } from 'src/app/services/http/auth.service';
+import { UsuarioService } from 'src/app/services/http/usuario.service';
 
 @Component({
   selector: 'app-user',

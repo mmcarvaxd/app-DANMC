@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonTabs, MenuController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/http/auth.service';
 import { Router } from '@angular/router';
 
 
@@ -10,25 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   title: string = '';
   tabs = {
     news: "Noticias",
     card: "Cartão",
     calendar: "Eventos"
   }
-  
-  constructor(private menu: MenuController, private authService: AuthService, private router: Router) { 
+
+  constructor(private menu: MenuController, private authService: AuthService, private router: Router) {
 
   }
   ngOnInit(): void {
-    if(!this.authService.getUser()) {
+    if (!this.authService.getUser()) {
       this.router.navigate(['/login'])
     }
-  }
-
-  openPortal() {
-    window.open('https://www.facebook.com/')
   }
 
   tabChanged(tab: IonTabs) {

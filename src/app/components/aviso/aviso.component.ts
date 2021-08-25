@@ -1,8 +1,9 @@
-import { AvisoService } from './../../services/aviso.service';
+import { AvisoService } from './../../services/http/aviso.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/http/auth.service';
+import { LoadingService } from 'src/app/services/shared/loading.service';
 
 @Component({
   selector: 'app-aviso',
@@ -21,13 +22,37 @@ export class AvisoComponent implements OnInit {
   usuario: Usuario
   isAdmin: boolean = false
 
-  constructor(private activeRoute: ActivatedRoute, private avisoService: AvisoService, private toastController: ToastController, private router: Router,  private authService: AuthService) { }
+  constructor(private activeRoute: ActivatedRoute, private avisoService: AvisoService, private toastController: ToastController, private router: Router, private authService: AuthService, private loadingService: LoadingService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+
     let id = this.activeRoute.snapshot.paramMap.get('id')
-    this.avisoService.buscaId(id).subscribe(resp => {
-      this.aviso = resp
-    })
+    await this.loadingService.presentLoading()
+    this.avisoService.buscaId(id)
+      .subscribe(async resp => {
+        if(!resp) {
+          let alert = await this.toastController.create({
+            message: 'Esse aviso foi deletado!',
+            duration: 2000
+          })
+          
+          alert.present()
+          
+          await this.loadingService.dismissLoading()
+          return this.router.navigate(['/home'])
+        }
+
+        this.aviso = resp
+        await this.loadingService.dismissLoading()
+      }, async error => {
+        let alert = await this.toastController.create({
+          message: 'Esse aviso foi deletado!',
+          duration: 2000
+        })
+
+        alert.present()
+        this.router.navigate(['/home'])
+      })
     this.usuario = this.authService.getUser()
     this.isAdmin = this.usuario.NivelAcessoId === 1;
   }

@@ -1,0 +1,17 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-title>Selecione o Tema</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let tema of temas" button (click)="clickTema(tema)" detail>
+      <ion-label>
+        <h2>{{tema.descricao}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -32,7 +32,10 @@ export class DocumentosService {
 
   download(id: Number): Observable<any> {
     let url = this.base_url + '/documentos/download/' + id
-    return this.http.get<any>(url,{responseType: 'arraybuffer', observe: 'response', headers: {'Access-Control-Expose-Headers': 'File-Type'}} )
+
+    window.open(url, '_system')
+    return EMPTY
+    //return this.http.get<any>(url,{responseType: 'arraybuffer' as 'json', observe: 'response', headers: {'Access-Control-Expose-Headers': 'File-Type'}} )
   }
 
   delete(id: Number) {

@@ -1,5 +1,5 @@
-import { AvisoService } from './../../services/aviso.service';
-import { TemasService } from './../../services/temas.service';
+import { AvisoService } from './../../services/http/aviso.service';
+import { TemasService } from './../../services/http/temas.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class CreatenewsComponent implements OnInit {
     titulo: ""
   }
 
-  temas: [Tema]
+  temas: Tema[]
 
   constructor(private temasService: TemasService, private avisoService: AvisoService,
     public toastController: ToastController, private router: Router) { }

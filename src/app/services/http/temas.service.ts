@@ -10,9 +10,9 @@ export class TemasService {
   base_url = environment.api_url
   constructor(private http: HttpClient) { }
 
-  busca(): Observable<[Tema]> {
+  busca(): Observable<Tema[]> {
     let url = this.base_url + '/tema'
-    return this.http.get<[Tema]>(url)
+    return this.http.get<Tema[]>(url)
   }
 }
 

@@ -1,4 +1,4 @@
-import { AuthService } from './../../../../services/auth.service';
+import { AuthService } from './../../../../services/http/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuOptions } from 'src/app/classes/menu-options';
 import { Router } from '@angular/router';

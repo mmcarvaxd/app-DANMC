@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { UsuarioService } from './../../../services/usuario.service';
-import { PerfilService } from './../../../services/perfil.service';
-import { TurmaService } from './../../../services/turma.service';
-import { NivelAcessoService } from './../../../services/nivel-acesso.service';
+import { UsuarioService } from './../../../services/http/usuario.service';
+import { PerfilService } from './../../../services/http/perfil.service';
+import { TurmaService } from './../../../services/http/turma.service';
+import { NivelAcessoService } from './../../../services/http/nivel-acesso.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 

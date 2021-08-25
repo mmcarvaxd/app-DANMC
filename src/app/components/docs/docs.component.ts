@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { DocumentosService } from 'src/app/services/documentos.service';
+import { AuthService } from 'src/app/services/http/auth.service';
+import { DocumentosService } from 'src/app/services/http/documentos.service';
+import { LoadingService } from 'src/app/services/shared/loading.service';
 
 @Component({
   selector: 'app-docs',
@@ -13,11 +14,13 @@ export class DocsComponent implements OnInit {
   usuario: Usuario
   isAdmin: boolean = false
 
-  constructor(private documentosService: DocumentosService, private authService: AuthService, private route: Router) { }
+  constructor(private documentosService: DocumentosService, private authService: AuthService, private route: Router, private loadingService: LoadingService) { }
 
-  ngOnInit() {
-    this.documentosService.busca().subscribe(resp => {
+  async ngOnInit() {
+    await this.loadingService.presentLoading()
+    this.documentosService.busca().subscribe(async resp => {
       this.docs = resp;
+      await this.loadingService.dismissLoading()
     })
     this.usuario = this.authService.getUser()
     this.isAdmin = this.usuario.NivelAcessoId === 1;

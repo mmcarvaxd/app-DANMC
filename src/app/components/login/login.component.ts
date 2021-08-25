@@ -1,7 +1,7 @@
-import { LoginService } from './../../services/login.service';
+import { LoginService } from './../../services/http/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/http/auth.service';
 import { ToastController } from '@ionic/angular';
 
 @Component({

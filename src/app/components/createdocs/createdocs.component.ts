@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AssuntosService } from 'src/app/services/assuntos.service';
-import { DocumentosService } from 'src/app/services/documentos.service';
+import { AssuntosService } from 'src/app/services/http/assuntos.service';
+import { DocumentosService } from 'src/app/services/http/documentos.service';
 import { Location } from '@angular/common';
 import { ToastController } from '@ionic/angular';
 

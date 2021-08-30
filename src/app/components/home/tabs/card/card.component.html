@@ -1,3 +1,25 @@
-<p>
-  card works!
-</p>
+<ion-header translucent="true">
+    <ion-toolbar>
+        <ion-title>Sócio Orgão</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-header translucent="true" collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Sócio Orgão</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle *ngIf="isActive">Ativo</ion-card-subtitle>
+        <ion-card-subtitle *ngIf="!isActive" style="color: red;">Expirado</ion-card-subtitle>
+        <ion-card-title>Sócio Orgão</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>Nome: {{usuario.nome}}</p>
+        <p *ngIf="isActive">Expira em: {{usuario.SocioOrgaoDate | date:'dd/MM/yyyy'}}</p>
+        <p *ngIf="!isActive">Status: Expirado</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

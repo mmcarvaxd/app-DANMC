@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ItemDropdownComponent } from './components/widgets/item-dropdown/item-dropdown.component';
 import { MenuComponent } from './components/home/tabs/menu/menu.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { CreatenewsComponent } from './components/createnews/createnews.component';
 import { UserComponent } from './components/user/user.component';
 import { CreatedocsComponent } from './components/createdocs/createdocs.component';
@@ -28,6 +28,10 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ng
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { FiltroModalComponent } from './components/home/tabs/news/filtro-modal/filtro-modal.component';
+import { TokenInterceptor } from './services/interceptors/token-interceptor';
+import { SocioOrgaoComponent } from './components/admin/socio-orgao/socio-orgao.component';
+import { UpdateSocioOrgaoComponent } from './components/admin/socio-orgao/update-socio-orgao/update-socio-orgao.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +49,10 @@ import { FiltroModalComponent } from './components/home/tabs/news/filtro-modal/f
     CreatedocsComponent,
     DocsComponent,
     DocComponent, 
-    FiltroModalComponent],
+    FiltroModalComponent,
+    SocioOrgaoComponent,
+    UpdateSocioOrgaoComponent
+  ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   exports: [ItemDropdownComponent],
@@ -55,7 +62,8 @@ import { FiltroModalComponent } from './components/home/tabs/news/filtro-modal/f
     IonTabs,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FileTransfer,FileOpener,
-    File
+    File,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

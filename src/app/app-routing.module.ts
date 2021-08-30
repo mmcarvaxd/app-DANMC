@@ -14,6 +14,8 @@ import { UserComponent } from './components/user/user.component';
 import { CreatedocsComponent } from './components/createdocs/createdocs.component';
 import { DocsComponent } from './components/docs/docs.component';
 import { DocComponent } from './components/doc/doc.component';
+import { SocioOrgaoComponent } from './components/admin/socio-orgao/socio-orgao.component';
+import { UpdateSocioOrgaoComponent } from './components/admin/socio-orgao/update-socio-orgao/update-socio-orgao.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'createuser',
     component: CreateUserComponent
+  },
+  {
+    path: 'socioorgao',
+    component: SocioOrgaoComponent
+  },
+  {
+    path: 'socioorgao/manage/:id',
+    component: UpdateSocioOrgaoComponent
   },
   {
     path: 'createnews',

@@ -7,4 +7,5 @@ class Usuario {
     NivelAcessoId: Number
     TurmaId: Number
     PerfilId: Number
+    SocioOrgaoDate?: Date
 }

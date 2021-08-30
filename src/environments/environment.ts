@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://danmc.xyz'
+  // api_url: 'https://danmc.xyz'
   // api_url: 'http://68.183.111.89:9002'
-  // api_url: 'http://localhost:9002'
+   api_url: 'http://localhost:9002'
 };
 
 /*

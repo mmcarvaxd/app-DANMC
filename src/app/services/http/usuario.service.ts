@@ -23,5 +23,20 @@ export class UsuarioService {
   savePassword(usuario: Usuario, senhaAntiga: String): Observable<any> {
     let url = this.base_url + `/usuario/senha/${usuario.id}`
     return this.http.put(url, { usuario, senhaAntiga })
-}
+  }
+
+  getUser(id: Number): Observable<any> {
+    let url = this.base_url + `/usuario/${id}`
+    return this.http.get(url)
+  }
+
+  getUsers(): Observable<any> {
+    let url = this.base_url + `/usuario`
+    return this.http.get(url)
+  }
+
+  renovarSocioOrgão(id: Number, tempoEmMeses: number): Observable<any> {
+    let url = this.base_url + `/usuario/socio/${id}`
+    return this.http.put(url, {tempoEmMeses})
+  }
 }

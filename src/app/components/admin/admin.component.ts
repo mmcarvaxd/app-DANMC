@@ -13,4 +13,8 @@ export class AdminComponent {
   createUser() {
     this.router.navigate(['createuser'])
   }
+
+  manageSocioOrgao() {
+    this.router.navigate(['socioorgao'])
+  }
 }

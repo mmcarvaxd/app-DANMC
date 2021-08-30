@@ -6,12 +6,12 @@
     <ion-title>Sócio Orgão</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="focus"></ion-searchbar>
+    <ion-searchbar showCancelButton="focus" (keyup)="search($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let usuario of usuarios" lines="full" detail (click)="clickUser(usuario)">
+    <ion-item *ngFor="let usuario of usuariosList" lines="full" detail (click)="clickUser(usuario)">
       <ion-label>{{usuario.login}} - {{usuario.nome}}</ion-label>
     </ion-item>
   </ion-list>

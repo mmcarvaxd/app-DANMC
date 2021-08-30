@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuOptions } from 'src/app/classes/menu-options';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +15,7 @@ export class MenuComponent {
   usuario: Usuario = this.authService.getUser()
   isAdmin: boolean = this.usuario.NivelAcessoId === 1
   
-  constructor(private authService: AuthService, private router: Router, private alertController: AlertController) {}
+  constructor(private authService: AuthService, private router: Router, private alertController: AlertController, private iab: InAppBrowser) {}
 
   createOption(icon: string, title: string, action: Function) {
     return new MenuOptions(icon, title, action)
@@ -22,7 +23,7 @@ export class MenuComponent {
 
   //Funções dos cards de opções
   openPortal() {
-    window.open('http://portaldoaluno.fmabc.br:7072/web/app/edu/PortalEducacional/login/?redirect=main', '_system')
+    this.iab.create('http://portaldoaluno.fmabc.br:7072/web/app/edu/PortalEducacional/login/?redirect=main', '_system')
   }
 
   async confirmSair() {
@@ -67,7 +68,7 @@ export class MenuComponent {
   }
 
   funcFeedBack() {
-    return window.open('https://forms.gle/RUtXnDmQhEi5D6Ro7', '_system')
+    this.iab.create('https://forms.gle/RUtXnDmQhEi5D6Ro7', '_system')
   }
 
   funcUsuario() {

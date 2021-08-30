@@ -32,7 +32,7 @@ export class DocumentosService {
 
   download(id: Number): Observable<any> {
     let url = this.base_url + '/documentos/download/' + id
-    return this.http.get<any>(url,{responseType: 'arraybuffer', observe: 'response', headers: {'Access-Control-Expose-Headers': 'File-Type'}} )
+    return this.http.get<any>(url,{observe: 'response', headers: {'Access-Control-Expose-Headers': 'File-Type', responseType: 'arraybuffer'}} )
   }
 
   delete(id: Number) {

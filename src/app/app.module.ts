@@ -27,6 +27,8 @@ import { DocComponent } from './components/doc/doc.component';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,8 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     IonTabs,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FileTransfer,FileOpener,
-    File
+    File,
+    InAppBrowser
   ],
   bootstrap: [AppComponent]
 })

@@ -32,6 +32,8 @@ import { TokenInterceptor } from './services/interceptors/token-interceptor';
 import { SocioOrgaoComponent } from './components/admin/socio-orgao/socio-orgao.component';
 import { UpdateSocioOrgaoComponent } from './components/admin/socio-orgao/update-socio-orgao/update-socio-orgao.component';
 
+
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { UpdateSocioOrgaoComponent } from './components/admin/socio-orgao/update
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FileTransfer,FileOpener,
     File,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    InAppBrowser
   ],
   bootstrap: [AppComponent]
 })

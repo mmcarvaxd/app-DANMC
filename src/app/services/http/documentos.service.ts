@@ -35,7 +35,6 @@ export class DocumentosService {
 
     window.open(url, '_system')
     return EMPTY
-    //return this.http.get<any>(url,{responseType: 'arraybuffer' as 'json', observe: 'response', headers: {'Access-Control-Expose-Headers': 'File-Type'}} )
   }
 
   delete(id: Number) {
